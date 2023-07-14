@@ -3,7 +3,8 @@
 
 # Setup
 You can set this up to your local development environment using Docker
-and the `sail` command. This assumes that you have already installed docker on your machine,
+and the `sail` command. 
+This assumes that you have already installed docker, and npm on your machine,
 and are running Linux or macOS as operating system.
 
 ## Prepare CSV Files
@@ -41,10 +42,11 @@ Seed database with data from database/data/csv files
 ```
 ./vendor/bin/sail artisan db:seed
 ```
+wait for the seeding to finish
 
-Seed database with data from database/data/csv files
+compile and run:
 ```
-./vendor/bin/sail artisan db:seed
+npm run dev
 ```
 
 # All Set! Visit http://localhost to see the Overview Page
