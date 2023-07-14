@@ -18,6 +18,12 @@
 
 </head>
 
+<style>
+    .error {
+        color: #ff0000;
+    }
+</style>
+
 <body>
     <div class="container text-center mt-4">
         @yield('content')
@@ -48,12 +54,14 @@
     })
 
     const search = (stat, yr, page) => {
-    if(stat && yr) {
+
         $('#table-viewer').html("Filtering Record. . . ")
         $.post('/search', {statistic: stat, year: yr, page: page}, function(r){
             $('#table-viewer').html(r)
-        })
-        }
+        }).fail( function(xhr, textStatus, errorThrown) {
+            error = JSON.parse(xhr.responseText);
+            $('#table-viewer').html("<span class='error'>"+error.message+"</span>")
+        });
     }
 
     $(function(){

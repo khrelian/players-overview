@@ -9,15 +9,15 @@
 <div class="row">
     <div class="col">
         <select class="form-select" aria-label="Default select example" id="stat-selector">
-            <option value="0" selected>Select Statistic</option>
+            <option value="" selected>Select Statistic</option>
             @foreach ($params as $key => $item)
-            <option value="{{$key}}">{{$item}}</option>
+            <option value=" {{$key}}">{{$item}}</option>
             @endforeach
         </select>
     </div>
     <div class="col">
         <select class="form-select" aria-label="Default select example" id="year-selector">
-            <option value="0" selected>Select Year</option>
+            <option value="" selected>Select Year</option>
             @foreach ($matchDates as $key => $item)
             <option>{{$item}}</option>
             @endforeach
